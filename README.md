@@ -1,4 +1,4 @@
-# NvMemArduino    [![Documentation](https://codedocs.xyz/sglvladi/NvMemArduino.svg)](https://codedocs.xyz/sglvladi/NvMemArduino/)
+# NvMemArduino    [![Documentation](https://codedocs.xyz/sglvladi/NvMemArduino.svg)](https://codedocs.xyz/sglvladi/NvMemArduino/)   [![CircleCI](https://circleci.com/gh/sglvladi/NvMemArduino/tree/master.svg?style=svg)](https://circleci.com/gh/sglvladi/NvMemArduino/tree/master)
 
 A collection of high-level Non-volatile Memory (NvMem) structures for Arduino devices.
 
