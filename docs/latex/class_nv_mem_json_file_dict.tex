@@ -1,0 +1,480 @@
+\hypertarget{class_nv_mem_json_file_dict}{}\section{Nv\+Mem\+Json\+File\+Dict Class Reference}
+\label{class_nv_mem_json_file_dict}\index{NvMemJsonFileDict@{NvMemJsonFileDict}}
+
+
+A Json file wrapper class for storing and retrieving key-\/value pairs in non-\/volatile memory.  
+
+
+
+
+{\ttfamily \#include $<$Nv\+Mem\+Json\+File\+Dict.\+h$>$}
+
+Inheritance diagram for Nv\+Mem\+Json\+File\+Dict\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nv_mem_json_file_dict}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_nv_mem_json_file_dict_aaf16ed30510b3fbce9d4ef07c445a86d}{Nv\+Mem\+Json\+File\+Dict}} (String \mbox{\hyperlink{class_nv_mem_json_file_dict_a9cf7220ebdf23d391790506e165e14d7}{path}}, bool auto\+\_\+save=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_nv_mem_json_file_dict}{Nv\+Mem\+Json\+File\+Dict}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nv_mem_json_file_dict_ab406cffea8b169cbf609f082dc24994f}{operator bool}} ()
+\begin{DoxyCompactList}\small\item\em Override bool operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_json_file_dict_af7e546ec407e5e07425b938a04ab8b6a}{contains}} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Check if a given {\ttfamily key} is available in the dictionary. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_nv_mem_json_file_dict_ae00ca1a78ae7e0d71fc8f36bc97bb32d}{size}} ()
+\begin{DoxyCompactList}\small\item\em Get size of file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nv_mem_json_file_dict_aa66c932e83655464e279861f1685e2ff}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Empty all file contents. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_json_file_dict_aee40593d8ea5dd5ecb3fead948b931b0}{save}} ()
+\begin{DoxyCompactList}\small\item\em Save contents of buffer to file. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_json_file_dict_a9cf7220ebdf23d391790506e165e14d7}{path}} ()
+\begin{DoxyCompactList}\small\item\em Get the file path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nv_mem_json_file_dict_a7b4c2899c4ed3cf1e33d69cbec83efe7}{set\+Path}} (String \mbox{\hyperlink{class_nv_mem_json_file_dict_a9cf7220ebdf23d391790506e165e14d7}{path}})
+\begin{DoxyCompactList}\small\item\em Set the file path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_json_file_dict_aa021fe277e0529adef47b80f82864f65}{auto\+Save}} ()
+\begin{DoxyCompactList}\small\item\em Check if file auto\+Save has been turned on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nv_mem_json_file_dict_a4896c91e42b5d444825417850e2f0f90}{set\+Auto\+Save}} (bool \mbox{\hyperlink{class_nv_mem_json_file_dict_aa021fe277e0529adef47b80f82864f65}{auto\+Save}})
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable auto\+Save. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nv_mem_json_file_dict_a251c5ae54e2b2f0482e2cfc9baf8854b}{open}} (bool force=true)
+\begin{DoxyCompactList}\small\item\em Open the Json file. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_json_file_dict_ad3e3c8f549a873f194a0d5ff60063f39}{init}} (const String \&key, String default\+Value)
+\begin{DoxyCompactList}\small\item\em Initialise an entry and return its value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\String \mbox{\hyperlink{class_nv_mem_json_file_dict_a247a229358e0530870801da4daaa717c}{get}} (const String \&key, T default\+Value)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_json_file_dict_ab6f75e7c39abfb09f31217d2a4a1ae14}{get}} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_json_file_dict_aec669b13cce54561e2f26074dea4d10d}{set}} (const String \&key, const String \&value)
+\begin{DoxyCompactList}\small\item\em Set the value of a given entry. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_json_file_dict_a6e0bd4044fc8a65c10a1ed1da5dd8a55}{remove}} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Remove an entry that matches a given {\ttfamily key}. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_json_file_dict_a6de6f10fa78add9b0918115ea4a220f6}{data\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{class_nv_mem_json_file_dict_a6889bd39213424ad5a8c193b957c0a30}{data\+Buffer}} (String data, size\+\_\+t \mbox{\hyperlink{class_nv_mem_json_file_dict_ae00ca1a78ae7e0d71fc8f36bc97bb32d}{size}})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+File \mbox{\hyperlink{class_nv_mem_json_file_dict_a26ced476468a309e4677a102602d2c51}{\+\_\+file}}
+\item 
+bool \mbox{\hyperlink{class_nv_mem_json_file_dict_afb9a35494c87bf2c2f7eecf3de0b8fb9}{\+\_\+auto\+\_\+save}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_nv_mem_json_file_dict_a7ea5616a9867b0b32e262ce093bfe8be}{\+\_\+size}}
+\item 
+int \mbox{\hyperlink{class_nv_mem_json_file_dict_aa6a81cbcf5023df029ad661d98a7cdfb}{\+\_\+status}} = -\/3
+\item 
+String \mbox{\hyperlink{class_nv_mem_json_file_dict_a9c5da238d33584b2541de96ce7d2b59c}{\+\_\+path}} = \char`\"{}/\char`\"{}
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{class_nv_mem_json_file_dict_a5639b383eb795c754fda0c6f007f304f}{\+\_\+data\+Buffer}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_nv_mem_json_file_dict_a328bcc8151393ca9cdf81c9cacc14a59}{\+\_\+auto\+Save\+Helper}} ()
+\item 
+void \mbox{\hyperlink{class_nv_mem_json_file_dict_a938c2a2e731c5fce2bea5e8dec924e60}{\+\_\+verify\+Spiffs\+Started}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_nv_mem_json_file_dict_ad5844c8a709c0f1009f47ee2baeba7e2}{\+\_\+calc\+Doc\+Size}} (size\+\_\+t data\+\_\+len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Json file wrapper class for storing and retrieving key-\/value pairs in non-\/volatile memory. 
+
+Includes support for\+:
+
+
+\begin{DoxyItemize}
+\item E\+S\+P8266 \&\& E\+S\+P32 (tested)\+:
+\begin{DoxyItemize}
+\item Makes use of the \href{https://github.com/esp8266/Arduino/tree/master/cores/esp8266/spiffs}{\texttt{ S\+P\+I\+F\+F\+S(\+E\+S\+P8266)}} and \href{https://github.com/espressif/arduino-esp32/tree/master/libraries/SPIFFS}{\texttt{ S\+P\+I\+F\+F\+S(\+E\+S\+P32)}} libraries to create, access (read/write) and manage a given Json file in the filesystem.
+\end{DoxyItemize}
+\item Generic Arduino (untested)\+:
+\begin{DoxyItemize}
+\item Should work with all Arduino platforms, but has not been tested! 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_aaf16ed30510b3fbce9d4ef07c445a86d}\label{class_nv_mem_json_file_dict_aaf16ed30510b3fbce9d4ef07c445a86d}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{NvMemJsonFileDict()}{NvMemJsonFileDict()}}
+{\footnotesize\ttfamily Nv\+Mem\+Json\+File\+Dict\+::\+Nv\+Mem\+Json\+File\+Dict (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{bool}]{auto\+\_\+save = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_nv_mem_json_file_dict}{Nv\+Mem\+Json\+File\+Dict}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the file. (e.\+g. \char`\"{}/settings.\+json\char`\"{}) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a328bcc8151393ca9cdf81c9cacc14a59}\label{class_nv_mem_json_file_dict_a328bcc8151393ca9cdf81c9cacc14a59}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_autoSaveHelper@{\_autoSaveHelper}}
+\index{\_autoSaveHelper@{\_autoSaveHelper}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_autoSaveHelper()}{\_autoSaveHelper()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Json\+File\+Dict\+::\+\_\+auto\+Save\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_ad5844c8a709c0f1009f47ee2baeba7e2}\label{class_nv_mem_json_file_dict_ad5844c8a709c0f1009f47ee2baeba7e2}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_calcDocSize@{\_calcDocSize}}
+\index{\_calcDocSize@{\_calcDocSize}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_calcDocSize()}{\_calcDocSize()}}
+{\footnotesize\ttfamily size\+\_\+t Nv\+Mem\+Json\+File\+Dict\+::\+\_\+calc\+Doc\+Size (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a938c2a2e731c5fce2bea5e8dec924e60}\label{class_nv_mem_json_file_dict_a938c2a2e731c5fce2bea5e8dec924e60}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_verifySpiffsStarted@{\_verifySpiffsStarted}}
+\index{\_verifySpiffsStarted@{\_verifySpiffsStarted}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_verifySpiffsStarted()}{\_verifySpiffsStarted()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Json\+File\+Dict\+::\+\_\+verify\+Spiffs\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_aa021fe277e0529adef47b80f82864f65}\label{class_nv_mem_json_file_dict_aa021fe277e0529adef47b80f82864f65}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!autoSave@{autoSave}}
+\index{autoSave@{autoSave}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{autoSave()}{autoSave()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Json\+File\+Dict\+::auto\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if file auto\+Save has been turned on. 
+
+\begin{DoxyReturn}{Returns}
+true if auto\+Save is enabled 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_af7e546ec407e5e07425b938a04ab8b6a}\label{class_nv_mem_json_file_dict_af7e546ec407e5e07425b938a04ab8b6a}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!contains@{contains}}
+\index{contains@{contains}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Json\+File\+Dict\+::contains (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if a given {\ttfamily key} is available in the dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to be searched in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if given key is available in the dictionary 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a755616173e4c94cf2a3cd227c38660d1}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a6de6f10fa78add9b0918115ea4a220f6}\label{class_nv_mem_json_file_dict_a6de6f10fa78add9b0918115ea4a220f6}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!dataBuffer@{dataBuffer}}
+\index{dataBuffer@{dataBuffer}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{dataBuffer()}{dataBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String Nv\+Mem\+Json\+File\+Dict\+::data\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a6889bd39213424ad5a8c193b957c0a30}\label{class_nv_mem_json_file_dict_a6889bd39213424ad5a8c193b957c0a30}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!dataBuffer@{dataBuffer}}
+\index{dataBuffer@{dataBuffer}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{dataBuffer()}{dataBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Nv\+Mem\+Json\+File\+Dict\+::data\+Buffer (\begin{DoxyParamCaption}\item[{String}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a247a229358e0530870801da4daaa717c}\label{class_nv_mem_json_file_dict_a247a229358e0530870801da4daaa717c}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!get@{get}}
+\index{get@{get}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+String Nv\+Mem\+Json\+File\+Dict\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{T}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+{\em default\+Value} & A default value to be returned if {\ttfamily key} does not exist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_ab6f75e7c39abfb09f31217d2a4a1ae14}\label{class_nv_mem_json_file_dict_ab6f75e7c39abfb09f31217d2a4a1ae14}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!get@{get}}
+\index{get@{get}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String Nv\+Mem\+Json\+File\+Dict\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a876f70d76462b15bfc23cab438077d17}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_ad3e3c8f549a873f194a0d5ff60063f39}\label{class_nv_mem_json_file_dict_ad3e3c8f549a873f194a0d5ff60063f39}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!init@{init}}
+\index{init@{init}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily String Nv\+Mem\+Json\+File\+Dict\+::init (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{String}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Initialise an entry and return its value. 
+
+The function will check to see if an entry exists with key {\ttfamily key}. If such an entry exists, its value will be returned. Otherwise, a new entry will be initialised with key {\ttfamily key} and value {\ttfamily default\+Value}, and its value will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be initialised \\
+\hline
+{\em default\+Value} & A default value to be used to initialise the entry if one doesn\textquotesingle{}t exist already. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The value of the existing or newly-\/initialised entry 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a251c5ae54e2b2f0482e2cfc9baf8854b}\label{class_nv_mem_json_file_dict_a251c5ae54e2b2f0482e2cfc9baf8854b}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!open@{open}}
+\index{open@{open}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily int Nv\+Mem\+Json\+File\+Dict\+::open (\begin{DoxyParamCaption}\item[{bool}]{force = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Open the Json file. 
+
+The class implements internal checks to make sure that the file is open, before attempting to access it, but ideally the \mbox{\hyperlink{class_nv_mem_json_file_dict_a251c5ae54e2b2f0482e2cfc9baf8854b}{open()}} function should be called before any other function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & If {\ttfamily true} and file cannot be opened, a new file will be created. Default is {\ttfamily true}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Error code taking the following values\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/2}\+: Failed to read and write to file. ({\ttfamily force=true})
+\item {\ttfamily -\/1}\+: Failed to read file. ({\ttfamily force=false})
+\item {\ttfamily 0}\+: Failed to convert to Json ({\ttfamily deserialize\+Json} error)
+\item {\ttfamily 1}\+: Successfully opened requested file
+\item {\ttfamily 2}\+: Created a new file ({\ttfamily force=true}) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_ab406cffea8b169cbf609f082dc24994f}\label{class_nv_mem_json_file_dict_ab406cffea8b169cbf609f082dc24994f}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily Nv\+Mem\+Json\+File\+Dict\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Override bool operator. 
+
+\begin{DoxyReturn}{Returns}
+true If file is open 
+
+false Otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a9cf7220ebdf23d391790506e165e14d7}\label{class_nv_mem_json_file_dict_a9cf7220ebdf23d391790506e165e14d7}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!path@{path}}
+\index{path@{path}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily String Nv\+Mem\+Json\+File\+Dict\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the file path. 
+
+\begin{DoxyReturn}{Returns}
+String Path to the file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a6e0bd4044fc8a65c10a1ed1da5dd8a55}\label{class_nv_mem_json_file_dict_a6e0bd4044fc8a65c10a1ed1da5dd8a55}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!remove@{remove}}
+\index{remove@{remove}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Json\+File\+Dict\+::remove (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove an entry that matches a given {\ttfamily key}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an existing entry was deleted 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a11d82ceaa4bb8b003080a1640ba40446}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_aa66c932e83655464e279861f1685e2ff}\label{class_nv_mem_json_file_dict_aa66c932e83655464e279861f1685e2ff}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!reset@{reset}}
+\index{reset@{reset}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Json\+File\+Dict\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Empty all file contents. 
+
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a1ae6a2c04b8adb81fc68e0abfd01c011}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_aee40593d8ea5dd5ecb3fead948b931b0}\label{class_nv_mem_json_file_dict_aee40593d8ea5dd5ecb3fead948b931b0}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!save@{save}}
+\index{save@{save}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Json\+File\+Dict\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Save contents of buffer to file. 
+
+\begin{DoxyReturn}{Returns}
+true If the buffer was successfully writen to file 
+
+false Otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_aec669b13cce54561e2f26074dea4d10d}\label{class_nv_mem_json_file_dict_aec669b13cce54561e2f26074dea4d10d}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!set@{set}}
+\index{set@{set}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Json\+File\+Dict\+::set (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{const String \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the value of a given entry. 
+
+Set the value of a given entry with key {\ttfamily key} to {\ttfamily value}.
+
+If \textbackslash{}key matches an existing entry, its value will be overwritted by {\ttfamily value}. If {\ttfamily value=\char`\"{}\char`\"{}}, any matched entry will be removed from memory, i.\+e. the function becomes equivalent to remove\+Entry(key). If {\ttfamily key} is not matched against any entry, a new entry will be created.
+
+Note\+: A {\ttfamily value=\char`\"{}\char`\"{}} will cause any existing entry to be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry whose value to set \\
+\hline
+{\em value} & Value to be set to the entry. If {\ttfamily value=\char`\"{}\char`\"{}}, then no new entry will be created and any existing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function succeded in setting the value 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_aac0c8ea17230b315ff906bce84e94124}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a4896c91e42b5d444825417850e2f0f90}\label{class_nv_mem_json_file_dict_a4896c91e42b5d444825417850e2f0f90}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!setAutoSave@{setAutoSave}}
+\index{setAutoSave@{setAutoSave}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{setAutoSave()}{setAutoSave()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Json\+File\+Dict\+::set\+Auto\+Save (\begin{DoxyParamCaption}\item[{bool}]{auto\+Save }\end{DoxyParamCaption})}
+
+
+
+Enable/\+Disable auto\+Save. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em auto\+Save} & {\ttfamily true} to enable, {\ttfamily false} to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a7b4c2899c4ed3cf1e33d69cbec83efe7}\label{class_nv_mem_json_file_dict_a7b4c2899c4ed3cf1e33d69cbec83efe7}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!setPath@{setPath}}
+\index{setPath@{setPath}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{setPath()}{setPath()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Json\+File\+Dict\+::set\+Path (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})}
+
+
+
+Set the file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_ae00ca1a78ae7e0d71fc8f36bc97bb32d}\label{class_nv_mem_json_file_dict_ae00ca1a78ae7e0d71fc8f36bc97bb32d}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!size@{size}}
+\index{size@{size}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Nv\+Mem\+Json\+File\+Dict\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get size of file. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Size of the file in bytes 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_afb9a35494c87bf2c2f7eecf3de0b8fb9}\label{class_nv_mem_json_file_dict_afb9a35494c87bf2c2f7eecf3de0b8fb9}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_auto\_save@{\_auto\_save}}
+\index{\_auto\_save@{\_auto\_save}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_auto\_save}{\_auto\_save}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Json\+File\+Dict\+::\+\_\+auto\+\_\+save\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a5639b383eb795c754fda0c6f007f304f}\label{class_nv_mem_json_file_dict_a5639b383eb795c754fda0c6f007f304f}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_dataBuffer@{\_dataBuffer}}
+\index{\_dataBuffer@{\_dataBuffer}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_dataBuffer}{\_dataBuffer}}
+{\footnotesize\ttfamily std\+::vector$<$char$>$ Nv\+Mem\+Json\+File\+Dict\+::\+\_\+data\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a26ced476468a309e4677a102602d2c51}\label{class_nv_mem_json_file_dict_a26ced476468a309e4677a102602d2c51}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_file@{\_file}}
+\index{\_file@{\_file}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_file}{\_file}}
+{\footnotesize\ttfamily File Nv\+Mem\+Json\+File\+Dict\+::\+\_\+file\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a9c5da238d33584b2541de96ce7d2b59c}\label{class_nv_mem_json_file_dict_a9c5da238d33584b2541de96ce7d2b59c}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_path@{\_path}}
+\index{\_path@{\_path}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_path}{\_path}}
+{\footnotesize\ttfamily String Nv\+Mem\+Json\+File\+Dict\+::\+\_\+path = \char`\"{}/\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_a7ea5616a9867b0b32e262ce093bfe8be}\label{class_nv_mem_json_file_dict_a7ea5616a9867b0b32e262ce093bfe8be}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_size@{\_size}}
+\index{\_size@{\_size}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily size\+\_\+t Nv\+Mem\+Json\+File\+Dict\+::\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_nv_mem_json_file_dict_aa6a81cbcf5023df029ad661d98a7cdfb}\label{class_nv_mem_json_file_dict_aa6a81cbcf5023df029ad661d98a7cdfb}} 
+\index{NvMemJsonFileDict@{NvMemJsonFileDict}!\_status@{\_status}}
+\index{\_status@{\_status}!NvMemJsonFileDict@{NvMemJsonFileDict}}
+\subsubsection{\texorpdfstring{\_status}{\_status}}
+{\footnotesize\ttfamily int Nv\+Mem\+Json\+File\+Dict\+::\+\_\+status = -\/3\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Nv\+Mem\+Arduino/src/\mbox{\hyperlink{_nv_mem_json_file_dict_8h}{Nv\+Mem\+Json\+File\+Dict.\+h}}\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Nv\+Mem\+Arduino/src/\mbox{\hyperlink{_nv_mem_json_file_dict_8cpp}{Nv\+Mem\+Json\+File\+Dict.\+cpp}}\end{DoxyCompactItemize}

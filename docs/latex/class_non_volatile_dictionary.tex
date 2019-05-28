@@ -1,0 +1,272 @@
+\section{Non\+Volatile\+Dictionary Class Reference}
+\label{class_non_volatile_dictionary}\index{NonVolatileDictionary@{NonVolatileDictionary}}
+
+
+A simple dictionary-\/like class for storing and retrieving key-\/value pairs in non-\/volatile memory.  
+
+
+
+
+{\ttfamily \#include $<$Non\+Volatile\+Dictionary.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Non\+Volatile\+Dictionary} (String name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxyref{Non\+Volatile\+Dictionary}{p.}{class_non_volatile_dictionary} object. \end{DoxyCompactList}\item 
+void \textbf{ begin} (String name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Start the config manager. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\String \textbf{ get} (const String \&key, T default\+Value)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. \end{DoxyCompactList}\item 
+String \textbf{ get} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). \end{DoxyCompactList}\item 
+bool \textbf{ set} (const String \&key, const String \&value)
+\begin{DoxyCompactList}\small\item\em Set the value of a given entry. \end{DoxyCompactList}\item 
+bool \textbf{ remove} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Remove an entry that matches a given {\ttfamily key}. \end{DoxyCompactList}\item 
+String \textbf{ init} (const String \&key, String default\+Value)
+\begin{DoxyCompactList}\small\item\em Initialise an entry and return its value. \end{DoxyCompactList}\item 
+unsigned long \textbf{ free\+Entries} ()
+\begin{DoxyCompactList}\small\item\em Get number of remaining free entries. \end{DoxyCompactList}\item 
+bool \textbf{ has\+Key} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Check if a given {\ttfamily key} is available in the dictionary. \end{DoxyCompactList}\item 
+void \textbf{ reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ \+\_\+name} = \char`\"{}root\char`\"{}
+\item 
+bool \textbf{ \+\_\+started} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple dictionary-\/like class for storing and retrieving key-\/value pairs in non-\/volatile memory. 
+
+Includes support for\+:
+
+
+\begin{DoxyItemize}
+\item E\+S\+P8266 (tested)\+:
+\begin{DoxyItemize}
+\item Makes use of the {\texttt{ Embedis}} library.
+\end{DoxyItemize}
+\item E\+S\+P32 (tested)\+:
+\begin{DoxyItemize}
+\item Makes use of the {\texttt{ Preferences}}.
+\end{DoxyItemize}
+\item Generic Arduino (untested)\+:
+\begin{DoxyItemize}
+\item Should work with all platforms supported by {\texttt{ Embedis}}. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_non_volatile_dictionary_abf2229f55626209a3b8253177afdc43c}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!NonVolatileDictionary@{NonVolatileDictionary}}
+\index{NonVolatileDictionary@{NonVolatileDictionary}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{NonVolatileDictionary()}
+{\footnotesize\ttfamily Non\+Volatile\+Dictionary\+::\+Non\+Volatile\+Dictionary (\begin{DoxyParamCaption}\item[{String}]{name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxyref{Non\+Volatile\+Dictionary}{p.}{class_non_volatile_dictionary} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the dictionary. This allows multiple dictionaries to be defined in memory. The dictionary name cannot be changed after \doxyref{begin()}{p.}{class_non_volatile_dictionary_ac95248e47f3bdabeda009c4a97e1da1c} is called. The default is {\ttfamily name=\char`\"{}\char`\"{}} in which case it will be set as {\ttfamily name=\char`\"{}root\char`\"{}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Although the constructor allows for an empty name (i.\+e. {\ttfamily name=\char`\"{}\char`\"{}}) to be passed as an argument, as explained above, this will result in the name being set as {\ttfamily name=\char`\"{}root\char`\"{}}, rather than {\ttfamily name=\char`\"{}\char`\"{}}. 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_non_volatile_dictionary_ac95248e47f3bdabeda009c4a97e1da1c}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!begin@{begin}}
+\index{begin@{begin}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{begin()}
+{\footnotesize\ttfamily void Non\+Volatile\+Dictionary\+::begin (\begin{DoxyParamCaption}\item[{String}]{name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Start the config manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the dictionary. This allows multiple dictionaries to be defined in memory. The dictionary name cannot be changed after this function is called. The default is {\ttfamily name=\char`\"{}\char`\"{}} in which case the value set during the \doxyref{constructor}{p.}{class_non_volatile_dictionary} will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_non_volatile_dictionary_ad1855e40cfdc49a9afd0b7f2460de8bb}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!freeEntries@{freeEntries}}
+\index{freeEntries@{freeEntries}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{freeEntries()}
+{\footnotesize\ttfamily unsigned long Non\+Volatile\+Dictionary\+::free\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get number of remaining free entries. 
+
+Calculates and returns the maximum number of dictionaries that can still be allocated by the manager.
+
+\begin{DoxyReturn}{Returns}
+unsigned long The number of free entries 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_dictionary_a13209781f7d9d5b87966e3a5a8755af8}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!get@{get}}
+\index{get@{get}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{get()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+String Non\+Volatile\+Dictionary\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{T}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+{\em default\+Value} & A default value to be returned if {\ttfamily key} does not exist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_dictionary_aa91ce97f862d4bfd1485860c01b1a10b}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!get@{get}}
+\index{get@{get}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{get()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String Non\+Volatile\+Dictionary\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_dictionary_a028d6f85cc2e6b265124d62a34c03934}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!hasKey@{hasKey}}
+\index{hasKey@{hasKey}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{hasKey()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Dictionary\+::has\+Key (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Check if a given {\ttfamily key} is available in the dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to be searched in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if given key is available in the dictionary 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_dictionary_a6e5fec206c99742dc6954ec998364de0}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!init@{init}}
+\index{init@{init}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{init()}
+{\footnotesize\ttfamily String Non\+Volatile\+Dictionary\+::init (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{String}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Initialise an entry and return its value. 
+
+The function will check to see if an entry exists with key {\ttfamily key}. If such an entry exists, its value will be returned. Otherwise, a new entry will be initialised with key {\ttfamily key} and value {\ttfamily default\+Value}, and its value will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be initialised \\
+\hline
+{\em default\+Value} & A default value to be used to initialise the entry if one doesn\textquotesingle{}t exist already. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The value of the existing or newly-\/initialised entry 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_dictionary_a8ee71c7f9407aa14d7a605c3c764dffb}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!remove@{remove}}
+\index{remove@{remove}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{remove()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Dictionary\+::remove (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Remove an entry that matches a given {\ttfamily key}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an existing entry was deleted 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_dictionary_ac8a366a7d1d8204cd436e74da84e426b}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!reset@{reset}}
+\index{reset@{reset}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{reset()}
+{\footnotesize\ttfamily void Non\+Volatile\+Dictionary\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_non_volatile_dictionary_ab69444dfce31758036d3b03d87a5cb97}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!set@{set}}
+\index{set@{set}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{set()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Dictionary\+::set (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{const String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of a given entry. 
+
+Set the value of a given entry with key {\ttfamily key} to {\ttfamily value}.
+
+If \textbackslash{}key matches an existing entry, its value will be overwritted by {\ttfamily value}. If {\ttfamily value=\char`\"{}\char`\"{}}, any matched entry will be removed from memory, i.\+e. the function becomes equivalent to remove\+Entry(key). If {\ttfamily key} is not matched against any entry, a new entry will be created.
+
+Note\+: A {\ttfamily value=\char`\"{}\char`\"{}} will cause any existing entry to be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry whose value to set \\
+\hline
+{\em value} & Value to be set to the entry. If {\ttfamily value=\char`\"{}\char`\"{}}, then no new entry will be created and any existing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function succeded in setting the value 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_non_volatile_dictionary_a52a2616b271d1a2e4929a92d1860f3a0}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!\_name@{\_name}}
+\index{\_name@{\_name}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{\_name}
+{\footnotesize\ttfamily String Non\+Volatile\+Dictionary\+::\+\_\+name = \char`\"{}root\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_non_volatile_dictionary_ad89ca23eaa5728cfe1d2be3bbd5fe7c9}} 
+\index{NonVolatileDictionary@{NonVolatileDictionary}!\_started@{\_started}}
+\index{\_started@{\_started}!NonVolatileDictionary@{NonVolatileDictionary}}
+\subsubsection{\_started}
+{\footnotesize\ttfamily bool Non\+Volatile\+Dictionary\+::\+\_\+started = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Non\+Volatile\+Dictionary/src/\textbf{ Non\+Volatile\+Dictionary.\+h}\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Non\+Volatile\+Dictionary/src/\textbf{ Non\+Volatile\+Dictionary.\+cpp}\end{DoxyCompactItemize}

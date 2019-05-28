@@ -1,0 +1,341 @@
+\section{Non\+Volatile\+Json\+File Class Reference}
+\label{class_non_volatile_json_file}\index{NonVolatileJsonFile@{NonVolatileJsonFile}}
+
+
+A Json file wrapper class for storing and retrieving key-\/value pairs in non-\/volatile memory.  
+
+
+
+
+{\ttfamily \#include $<$Non\+Volatile\+Json\+File.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Non\+Volatile\+Json\+File} (String path=\char`\"{}/settings.\+json\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxyref{Non\+Volatile\+Json\+File}{p.}{class_non_volatile_json_file} object. \end{DoxyCompactList}\item 
+int \textbf{ open} (bool force=true)
+\begin{DoxyCompactList}\small\item\em Open the Json file. \end{DoxyCompactList}\item 
+int \textbf{ open} (String path, bool force=true)
+\begin{DoxyCompactList}\small\item\em Open the Json file while overriding the path set in the constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\String \textbf{ get} (const String \&key, T default\+Value)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. \end{DoxyCompactList}\item 
+String \textbf{ get} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). \end{DoxyCompactList}\item 
+bool \textbf{ set} (const String \&key, const String \&value)
+\begin{DoxyCompactList}\small\item\em Set the value of a given entry. \end{DoxyCompactList}\item 
+bool \textbf{ remove} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Remove an entry that matches a given {\ttfamily key}. \end{DoxyCompactList}\item 
+String \textbf{ init} (const String \&key, String default\+Value)
+\begin{DoxyCompactList}\small\item\em Initialise an entry and return its value. \end{DoxyCompactList}\item 
+bool \textbf{ contains} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Check if a given {\ttfamily key} is available in the dictionary. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ size} ()
+\begin{DoxyCompactList}\small\item\em Get size of file. \end{DoxyCompactList}\item 
+void \textbf{ reset} ()
+\item 
+bool \textbf{ save} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+File \textbf{ \+\_\+file}
+\item 
+String \textbf{ \+\_\+json\+Str} = \char`\"{}\{\}\char`\"{}
+\item 
+String \textbf{ \+\_\+path} = \char`\"{}/\char`\"{}
+\item 
+size\+\_\+t \textbf{ \+\_\+size} = 1
+\item 
+bool \textbf{ \+\_\+status} =
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Json file wrapper class for storing and retrieving key-\/value pairs in non-\/volatile memory. 
+
+Includes support for\+:
+
+
+\begin{DoxyItemize}
+\item E\+S\+P8266 \&\& E\+S\+P32 (tested)\+:
+\begin{DoxyItemize}
+\item Makes use of the {\texttt{ S\+P\+I\+F\+F\+S(\+E\+S\+P8266)}} and {\texttt{ S\+P\+I\+F\+F\+S(\+E\+S\+P32)}} libraries to create, access (read/write) and manage a given Json file in the filesystem.
+\end{DoxyItemize}
+\item Generic Arduino (untested)\+:
+\begin{DoxyItemize}
+\item Should work with all Arduino platforms, but has not been tested! 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_non_volatile_json_file_a92928077ce9b83a535255fb998265746}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{NonVolatileJsonFile()}
+{\footnotesize\ttfamily Non\+Volatile\+Json\+File\+::\+Non\+Volatile\+Json\+File (\begin{DoxyParamCaption}\item[{String}]{path = {\ttfamily \char`\"{}/settings.json\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxyref{Non\+Volatile\+Json\+File}{p.}{class_non_volatile_json_file} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the file. (e.\+g. \char`\"{}/settings.\+json\char`\"{}) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_non_volatile_json_file_ac91b0b8a06d36c277dd133e65479c457}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!contains@{contains}}
+\index{contains@{contains}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{contains()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Json\+File\+::contains (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Check if a given {\ttfamily key} is available in the dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to be searched in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if given key is available in the dictionary 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_a9517ef872b54789b0545a171a81cfeea}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!get@{get}}
+\index{get@{get}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{get()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+String Non\+Volatile\+Json\+File\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{T}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+{\em default\+Value} & A default value to be returned if {\ttfamily key} does not exist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_aa205389032c4d5a9cb04d87a0ba5a2be}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!get@{get}}
+\index{get@{get}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{get()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String Non\+Volatile\+Json\+File\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_ab0249347d3ea66fc379a9bbe7bdcde07}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!init@{init}}
+\index{init@{init}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{init()}
+{\footnotesize\ttfamily String Non\+Volatile\+Json\+File\+::init (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{String}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Initialise an entry and return its value. 
+
+The function will check to see if an entry exists with key {\ttfamily key}. If such an entry exists, its value will be returned. Otherwise, a new entry will be initialised with key {\ttfamily key} and value {\ttfamily default\+Value}, and its value will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be initialised \\
+\hline
+{\em default\+Value} & A default value to be used to initialise the entry if one doesn\textquotesingle{}t exist already. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The value of the existing or newly-\/initialised entry 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_a81cb05dd9ffff965a8d6b831be6397c0}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!open@{open}}
+\index{open@{open}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{open()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Non\+Volatile\+Json\+File\+::open (\begin{DoxyParamCaption}\item[{bool}]{force = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Open the Json file. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false\+The class implements internal checks to make sure that the file is open, before attempting to access it, but ideally the \doxyref{open()}{p.}{class_non_volatile_json_file_a81cb05dd9ffff965a8d6b831be6397c0} function should be called before any other function.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em force} & If {\ttfamily true} and file cannot be opened, a new file will be created. Default is {\ttfamily true}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Error code taking the following values\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/2}\+: Failed to read and write to file. ({\ttfamily force=true})
+\item {\ttfamily -\/1}\+: Failed to read file. ({\ttfamily force=false})
+\item {\ttfamily 0}\+: Failed to convert to Json ({\ttfamily deserialize\+Json} error)
+\item {\ttfamily 1}\+: Successfully opened requested file
+\item {\ttfamily 2}\+: Created a new file ({\ttfamily force=true}) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_ab329f2fbfe6d7c2eac6cc5d221155ada}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!open@{open}}
+\index{open@{open}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{open()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Non\+Volatile\+Json\+File\+::open (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{bool}]{force = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Open the Json file while overriding the path set in the constructor. 
+
+The class implements internal checks to make sure that the file is open, before attempting to access it, but ideally the \doxyref{open()}{p.}{class_non_volatile_json_file_a81cb05dd9ffff965a8d6b831be6397c0} function should be called before any other function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Path to the file. (e.\+g. \char`\"{}/settings.\+json\char`\"{}). The default is {\ttfamily name=\char`\"{}\char`\"{}} in which case the value set during the \doxyref{constructor}{p.}{class_non_volatile_json_file} will be used. \\
+\hline
+{\em force} & If {\ttfamily true} and file cannot be opened, a new file will be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Error code taking the following values\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/2}\+: Failed to read and write to file. ({\ttfamily force=true})
+\item {\ttfamily -\/1}\+: Failed to read file. ({\ttfamily force=false})
+\item {\ttfamily 0}\+: Failed to convert to Json ({\ttfamily deserialize\+Json} error)
+\item {\ttfamily 1}\+: Successfully opened requested file
+\item {\ttfamily 2}\+: Created a new file ({\ttfamily force=true}) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_a43758377c6daa4f596bd03294d266f6f}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!remove@{remove}}
+\index{remove@{remove}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{remove()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Json\+File\+::remove (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Remove an entry that matches a given {\ttfamily key}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an existing entry was deleted 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_aca0a5b467b0e46ae5c40a1074e68c879}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!reset@{reset}}
+\index{reset@{reset}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{reset()}
+{\footnotesize\ttfamily void Non\+Volatile\+Json\+File\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_non_volatile_json_file_a894a1f50da173c8ee6eb541a02b49657}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!save@{save}}
+\index{save@{save}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{save()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Json\+File\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_non_volatile_json_file_a0005e75af53cc0d57e8e166626edb802}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!set@{set}}
+\index{set@{set}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{set()}
+{\footnotesize\ttfamily bool Non\+Volatile\+Json\+File\+::set (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{const String \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of a given entry. 
+
+Set the value of a given entry with key {\ttfamily key} to {\ttfamily value}.
+
+If \textbackslash{}key matches an existing entry, its value will be overwritted by {\ttfamily value}. If {\ttfamily value=\char`\"{}\char`\"{}}, any matched entry will be removed from memory, i.\+e. the function becomes equivalent to remove\+Entry(key). If {\ttfamily key} is not matched against any entry, a new entry will be created.
+
+Note\+: A {\ttfamily value=\char`\"{}\char`\"{}} will cause any existing entry to be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry whose value to set \\
+\hline
+{\em value} & Value to be set to the entry. If {\ttfamily value=\char`\"{}\char`\"{}}, then no new entry will be created and any existing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function succeded in setting the value 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\label{class_non_volatile_json_file_a16e08fd87fc281d31d8705af90ef9bf9}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!size@{size}}
+\index{size@{size}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{size()}
+{\footnotesize\ttfamily size\+\_\+t Non\+Volatile\+Json\+File\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get size of file. 
+
+\begin{DoxyReturn}{Returns}
+unsigned long Size of the file in bytes 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_non_volatile_json_file_aa2220c8bc5a9d1fd51501adbd4f77904}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!\_file@{\_file}}
+\index{\_file@{\_file}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{\_file}
+{\footnotesize\ttfamily File Non\+Volatile\+Json\+File\+::\+\_\+file\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_non_volatile_json_file_aa95d2b1059a27db20d9c724e037ee0ea}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!\_jsonStr@{\_jsonStr}}
+\index{\_jsonStr@{\_jsonStr}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{\_jsonStr}
+{\footnotesize\ttfamily String Non\+Volatile\+Json\+File\+::\+\_\+json\+Str = \char`\"{}\{\}\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_non_volatile_json_file_a255747b8cf596e42da2243f3d6a9c260}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!\_path@{\_path}}
+\index{\_path@{\_path}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{\_path}
+{\footnotesize\ttfamily String Non\+Volatile\+Json\+File\+::\+\_\+path = \char`\"{}/\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_non_volatile_json_file_a9e9d6e60d7c7ca4df97108abfdef8ca9}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!\_size@{\_size}}
+\index{\_size@{\_size}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{\_size}
+{\footnotesize\ttfamily size\+\_\+t Non\+Volatile\+Json\+File\+::\+\_\+size = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_non_volatile_json_file_a214c3da3efc6677ac4a056338a86f8e2}} 
+\index{NonVolatileJsonFile@{NonVolatileJsonFile}!\_status@{\_status}}
+\index{\_status@{\_status}!NonVolatileJsonFile@{NonVolatileJsonFile}}
+\subsubsection{\_status}
+{\footnotesize\ttfamily bool Non\+Volatile\+Json\+File\+::\+\_\+status =\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Non\+Volatile\+Dictionary/src/\textbf{ Non\+Volatile\+Json\+File.\+h}\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Non\+Volatile\+Dictionary/src/\textbf{ Non\+Volatile\+Json\+File.\+cpp}\end{DoxyCompactItemize}

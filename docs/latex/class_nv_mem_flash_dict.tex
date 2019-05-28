@@ -1,0 +1,343 @@
+\hypertarget{class_nv_mem_flash_dict}{}\section{Nv\+Mem\+Flash\+Dict Class Reference}
+\label{class_nv_mem_flash_dict}\index{NvMemFlashDict@{NvMemFlashDict}}
+
+
+A simple, dictionary-\/like, class for storing and retrieving key-\/value pairs in Flash memory.  
+
+
+
+
+{\ttfamily \#include $<$Nv\+Mem\+Flash\+Dict.\+h$>$}
+
+Inheritance diagram for Nv\+Mem\+Flash\+Dict\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nv_mem_flash_dict}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_nv_mem_flash_dict_a2756e9c688e80634ea15f5ded9a3cd6f}{Nv\+Mem\+Flash\+Dict}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_nv_mem_flash_dict}{Nv\+Mem\+Flash\+Dict}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nv_mem_flash_dict_aae2853114a90569df480672f870818b2}{Nv\+Mem\+Flash\+Dict}} (String \mbox{\hyperlink{class_nv_mem_flash_dict_a55888a3489875052acc0602499cc73fe}{name}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_nv_mem_flash_dict}{Nv\+Mem\+Flash\+Dict}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nv_mem_flash_dict_a82853c97e48c0bfcef79afde94ba0b56}{open}} (String \mbox{\hyperlink{class_nv_mem_flash_dict_a55888a3489875052acc0602499cc73fe}{name}}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Start the \mbox{\hyperlink{class_nv_mem_flash_dict}{Nv\+Mem\+Flash\+Dict}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nv_mem_flash_dict_a77ef71d649eb918d527f17e2d10aa622}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Clear all dictionary contents. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_flash_dict_a55888a3489875052acc0602499cc73fe}{name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the dictionary. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_flash_dict_a25030ea9f57f53339b5f550fc89361af}{init}} (const String \&key, String default\+Value)
+\begin{DoxyCompactList}\small\item\em Initialise an entry and return its value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\String \mbox{\hyperlink{class_nv_mem_flash_dict_a49632ee590fb5cf5b27bd6442c016e6f}{get}} (const String \&key, T default\+Value)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_nv_mem_flash_dict_a16eb803b23dc954a814ac2dc8580bd5e}{get}} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_flash_dict_ad88e325c0a9cebef246815c6bcdc9cef}{set}} (const String \&key, const String \&value)
+\begin{DoxyCompactList}\small\item\em Set the value of a given entry. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_flash_dict_a1afddb8d0ae4cc6be96f83434763c26d}{remove}} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Remove an entry that matches a given {\ttfamily key}. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{class_nv_mem_flash_dict_a1db17ef21b447a6e644389cc5b44f122}{free\+Entries}} ()
+\begin{DoxyCompactList}\small\item\em Get number of remaining free entries. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nv_mem_flash_dict_aab2e9f6da1d6ba89df32c20b1746ea75}{contains}} (const String \&key)
+\begin{DoxyCompactList}\small\item\em Check if a given {\ttfamily key} is available in the dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{class_nv_mem_flash_dict_a3c15fe330f54d1853ec7b5b2002e3190}{\+\_\+name}} = \char`\"{}root\char`\"{}
+\item 
+bool \mbox{\hyperlink{class_nv_mem_flash_dict_ad134004e0f89ea8b0d334d9c5cc8a795}{\+\_\+started}} = false
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_nv_mem_flash_dict_a00390a7c91035e6a7f21df343f6440bc}{\+\_\+ensure\+Started}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple, dictionary-\/like, class for storing and retrieving key-\/value pairs in Flash memory. 
+
+Includes support for\+:
+
+
+\begin{DoxyItemize}
+\item E\+S\+P8266 (tested)\+:
+\begin{DoxyItemize}
+\item Makes use of the \href{https://github.com/thingSoC/embedis}{\texttt{ Embedis}} library.
+\end{DoxyItemize}
+\item E\+S\+P32 (tested)\+:
+\begin{DoxyItemize}
+\item Makes use of the \href{https://github.com/espressif/arduino-esp32/tree/master/libraries/Preferences}{\texttt{ Preferences}}.
+\end{DoxyItemize}
+\item Generic Arduino (untested)\+:
+\begin{DoxyItemize}
+\item Should work with all platforms supported by \href{https://github.com/thingSoC/embedis}{\texttt{ Embedis}}. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a2756e9c688e80634ea15f5ded9a3cd6f}\label{class_nv_mem_flash_dict_a2756e9c688e80634ea15f5ded9a3cd6f}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!NvMemFlashDict@{NvMemFlashDict}}
+\index{NvMemFlashDict@{NvMemFlashDict}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{NvMemFlashDict()}{NvMemFlashDict()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Nv\+Mem\+Flash\+Dict\+::\+Nv\+Mem\+Flash\+Dict (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_nv_mem_flash_dict}{Nv\+Mem\+Flash\+Dict}} object. 
+
+\begin{DoxyNote}{Note}
+Although the constructor allows for an empty name (i.\+e. {\ttfamily name=\char`\"{}\char`\"{}}) to be passed as an argument, as explained above, this will result in the name being set as {\ttfamily name=\char`\"{}root\char`\"{}}, rather than {\ttfamily name=\char`\"{}\char`\"{}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_aae2853114a90569df480672f870818b2}\label{class_nv_mem_flash_dict_aae2853114a90569df480672f870818b2}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!NvMemFlashDict@{NvMemFlashDict}}
+\index{NvMemFlashDict@{NvMemFlashDict}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{NvMemFlashDict()}{NvMemFlashDict()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Nv\+Mem\+Flash\+Dict\+::\+Nv\+Mem\+Flash\+Dict (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_nv_mem_flash_dict}{Nv\+Mem\+Flash\+Dict}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the dictionary. This allows multiple dictionaries to be defined in memory. The dictionary name cannot be changed after begin() is called. The default is {\ttfamily name=\char`\"{}\char`\"{}} in which case it will be set as {\ttfamily name=\char`\"{}root\char`\"{}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Although the constructor allows for an empty name (i.\+e. {\ttfamily name=\char`\"{}\char`\"{}}) to be passed as an argument, as explained above, this will result in the name being set as {\ttfamily name=\char`\"{}root\char`\"{}}, rather than {\ttfamily name=\char`\"{}\char`\"{}}. 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a00390a7c91035e6a7f21df343f6440bc}\label{class_nv_mem_flash_dict_a00390a7c91035e6a7f21df343f6440bc}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!\_ensureStarted@{\_ensureStarted}}
+\index{\_ensureStarted@{\_ensureStarted}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{\_ensureStarted()}{\_ensureStarted()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Flash\+Dict\+::\+\_\+ensure\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_nv_mem_flash_dict_aab2e9f6da1d6ba89df32c20b1746ea75}\label{class_nv_mem_flash_dict_aab2e9f6da1d6ba89df32c20b1746ea75}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!contains@{contains}}
+\index{contains@{contains}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Flash\+Dict\+::contains (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if a given {\ttfamily key} is available in the dictionary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to be searched in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if given key is available in the dictionary 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a755616173e4c94cf2a3cd227c38660d1}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a1db17ef21b447a6e644389cc5b44f122}\label{class_nv_mem_flash_dict_a1db17ef21b447a6e644389cc5b44f122}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!freeEntries@{freeEntries}}
+\index{freeEntries@{freeEntries}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{freeEntries()}{freeEntries()}}
+{\footnotesize\ttfamily unsigned long Nv\+Mem\+Flash\+Dict\+::free\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get number of remaining free entries. 
+
+Calculates and returns the maximum number of dictionaries that can still be allocated by the manager.
+
+\begin{DoxyReturn}{Returns}
+unsigned long The number of free entries 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a49632ee590fb5cf5b27bd6442c016e6f}\label{class_nv_mem_flash_dict_a49632ee590fb5cf5b27bd6442c016e6f}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!get@{get}}
+\index{get@{get}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+String Nv\+Mem\+Flash\+Dict\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{T}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, a provided {\ttfamily default\+Value} will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+{\em default\+Value} & A default value to be returned if {\ttfamily key} does not exist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a16eb803b23dc954a814ac2dc8580bd5e}\label{class_nv_mem_flash_dict_a16eb803b23dc954a814ac2dc8580bd5e}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!get@{get}}
+\index{get@{get}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String Nv\+Mem\+Flash\+Dict\+::get (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the stored value of a given entry with key {\ttfamily key}. If the {\ttfamily key} does not exist, an empty {\ttfamily String} (i.\+e. {\ttfamily \char`\"{}\char`\"{}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key whose value to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The returned value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a876f70d76462b15bfc23cab438077d17}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a25030ea9f57f53339b5f550fc89361af}\label{class_nv_mem_flash_dict_a25030ea9f57f53339b5f550fc89361af}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!init@{init}}
+\index{init@{init}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily String Nv\+Mem\+Flash\+Dict\+::init (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{String}]{default\+Value }\end{DoxyParamCaption})}
+
+
+
+Initialise an entry and return its value. 
+
+The function will check to see if an entry exists with key {\ttfamily key}. If such an entry exists, its value will be returned. Otherwise, a new entry will be initialised with key {\ttfamily key} and value {\ttfamily default\+Value}, and its value will be returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be initialised \\
+\hline
+{\em default\+Value} & A default value to be used to initialise the entry if one doesn\textquotesingle{}t exist already. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String The value of the existing or newly-\/initialised entry 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a55888a3489875052acc0602499cc73fe}\label{class_nv_mem_flash_dict_a55888a3489875052acc0602499cc73fe}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!name@{name}}
+\index{name@{name}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily String Nv\+Mem\+Flash\+Dict\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the dictionary. 
+
+\begin{DoxyReturn}{Returns}
+String Name of the dictionary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a82853c97e48c0bfcef79afde94ba0b56}\label{class_nv_mem_flash_dict_a82853c97e48c0bfcef79afde94ba0b56}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!open@{open}}
+\index{open@{open}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Flash\+Dict\+::open (\begin{DoxyParamCaption}\item[{String}]{name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Start the \mbox{\hyperlink{class_nv_mem_flash_dict}{Nv\+Mem\+Flash\+Dict}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the dictionary. This allows multiple dictionaries to be defined in memory. The dictionary name cannot be changed after this function is called. The default is {\ttfamily name=\char`\"{}\char`\"{}} in which case the value set during the \mbox{\hyperlink{class_nv_mem_flash_dict}{constructor}} will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a1afddb8d0ae4cc6be96f83434763c26d}\label{class_nv_mem_flash_dict_a1afddb8d0ae4cc6be96f83434763c26d}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!remove@{remove}}
+\index{remove@{remove}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Flash\+Dict\+::remove (\begin{DoxyParamCaption}\item[{const String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove an entry that matches a given {\ttfamily key}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an existing entry was deleted 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a11d82ceaa4bb8b003080a1640ba40446}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a77ef71d649eb918d527f17e2d10aa622}\label{class_nv_mem_flash_dict_a77ef71d649eb918d527f17e2d10aa622}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!reset@{reset}}
+\index{reset@{reset}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Nv\+Mem\+Flash\+Dict\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear all dictionary contents. 
+
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_a1ae6a2c04b8adb81fc68e0abfd01c011}{Nv\+Mem\+Base\+Dict}}.
+
+\mbox{\Hypertarget{class_nv_mem_flash_dict_ad88e325c0a9cebef246815c6bcdc9cef}\label{class_nv_mem_flash_dict_ad88e325c0a9cebef246815c6bcdc9cef}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!set@{set}}
+\index{set@{set}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Flash\+Dict\+::set (\begin{DoxyParamCaption}\item[{const String \&}]{key,  }\item[{const String \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the value of a given entry. 
+
+Set the value of a given entry with key {\ttfamily key} to {\ttfamily value}.
+
+If \textbackslash{}key matches an existing entry, its value will be overwritted by {\ttfamily value}. If {\ttfamily value=\char`\"{}\char`\"{}}, any matched entry will be removed from memory, i.\+e. the function becomes equivalent to remove\+Entry(key). If {\ttfamily key} is not matched against any entry, a new entry will be created.
+
+Note\+: A {\ttfamily value=\char`\"{}\char`\"{}} will cause any existing entry to be removed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of entry whose value to set \\
+\hline
+{\em value} & Value to be set to the entry. If {\ttfamily value=\char`\"{}\char`\"{}}, then no new entry will be created and any existing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function succeded in setting the value 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_nv_mem_base_dict_aac0c8ea17230b315ff906bce84e94124}{Nv\+Mem\+Base\+Dict}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_nv_mem_flash_dict_a3c15fe330f54d1853ec7b5b2002e3190}\label{class_nv_mem_flash_dict_a3c15fe330f54d1853ec7b5b2002e3190}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!\_name@{\_name}}
+\index{\_name@{\_name}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{\_name}{\_name}}
+{\footnotesize\ttfamily String Nv\+Mem\+Flash\+Dict\+::\+\_\+name = \char`\"{}root\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_nv_mem_flash_dict_ad134004e0f89ea8b0d334d9c5cc8a795}\label{class_nv_mem_flash_dict_ad134004e0f89ea8b0d334d9c5cc8a795}} 
+\index{NvMemFlashDict@{NvMemFlashDict}!\_started@{\_started}}
+\index{\_started@{\_started}!NvMemFlashDict@{NvMemFlashDict}}
+\subsubsection{\texorpdfstring{\_started}{\_started}}
+{\footnotesize\ttfamily bool Nv\+Mem\+Flash\+Dict\+::\+\_\+started = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Nv\+Mem\+Arduino/src/\mbox{\hyperlink{_nv_mem_flash_dict_8h}{Nv\+Mem\+Flash\+Dict.\+h}}\item 
+D\+:/\+Documents/\+Documents\+\_\+old/\+Arduino/libraries/\+Nv\+Mem\+Arduino/src/\mbox{\hyperlink{_nv_mem_flash_dict_8cpp}{Nv\+Mem\+Flash\+Dict.\+cpp}}\end{DoxyCompactItemize}
